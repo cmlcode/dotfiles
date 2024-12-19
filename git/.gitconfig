@@ -1,0 +1,10 @@
+[user]
+	name = Chris Lewis
+	email = clewis24@tulane.edu
+	signingkey = /home/cml/.ssh/id_ed25519.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[credential]
+	helper = cache
