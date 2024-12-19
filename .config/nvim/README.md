@@ -1,0 +1,1 @@
+ADD TO ~/.config/nvim
