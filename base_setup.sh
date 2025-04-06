@@ -53,4 +53,4 @@ for file in "${SETUP_DIR}"/*; do
 done
 
 shopt -u dotglob
-echo "Finished setting up ${APP_NAME}"
+echo "Finished setting up ${APP_NAME}" 
