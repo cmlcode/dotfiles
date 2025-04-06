@@ -10,8 +10,6 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# Setup bash command line
 PS1='[\u \W]\$ '
 
-PATH=$PATH:/usr/local/stata18/
-export XDG_CURRENT_DESKTOP=GNOME
-alias config='/usr/bin/git --git-dir=/home/cml/.cfg/ --work-tree=/home/cml'
