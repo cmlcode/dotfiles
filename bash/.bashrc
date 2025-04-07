@@ -12,6 +12,3 @@ fi
 
 # Setup bash command line
 PS1='[\u \W]\$ '
-
-# set gpg signing key
-export GPG_TTY=$(tty)
