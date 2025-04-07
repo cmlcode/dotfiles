@@ -9,7 +9,7 @@ set -e
 APP_NAME="$(basename "${BASH_SOURCE[0]%/*}")"
 DRY_RUN=false
 SETUP_DIR="${PWD}/${APP_NAME}"
-TARGET_DIR="$HOME"
+TARGET_DIR="${HOME}"
 
 # Parse args
 for arg in "$@"; do
