@@ -36,8 +36,8 @@ for file in "${SETUP_DIR}"/*; do
   dest="${TARGET_DIR}/${filename}"
 
   # Compare files
-  if [[ -f "${dest}" ]]; then
-    if cmp -s "$src" "$dest"; then
+  if [[ -e "${dest}" ]]; then
+    if diff -qr "$src" "$dest" > /dev/null; then
       continue 
     fi
   fi 
@@ -48,12 +48,9 @@ for file in "${SETUP_DIR}"/*; do
   else
     # Run copy
     echo "-> Copying ${filename} to ${dest}"
+		rm -rf "${dest}"
     mkdir -p "$(dirname "${dest}")"
-		if [[ -d "${src}" ]]; then
-			cp -r "${src}" "${dest}"
-		else
-			cp "${src}" "${dest}"
-		fi
+		cp -r "${src}" "${dest}"
   fi
 done
 
