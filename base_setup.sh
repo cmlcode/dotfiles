@@ -24,7 +24,7 @@ for arg in "$@"; do
       esac
 done
 
-echo "Setting up '${APP_NAME}..."
+echo "Setting up ${APP_NAME}..."
 
 shopt -s dotglob
 for file in "${SETUP_DIR}"/*; do
