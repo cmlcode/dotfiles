@@ -27,7 +27,7 @@ opt.incsearch = true		  -- bool: Use incremental search
 opt.hlsearch = true		    -- bool: Highlight search matches
 
 -- [[ Whitespace ]]
-opt.expandtab = true		  -- bool: Use spaces instead of tabs
+opt.expandtab = false 
 opt.shiftwidth = 2        -- num : Size of an indent
 opt.softtabstop = 2       -- num : num of spaces for insert mode
 opt.tabstop = 2           -- num : num of spaces tab counts for
