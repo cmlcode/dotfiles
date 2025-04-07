@@ -9,7 +9,7 @@ set -e
 APP_NAME="$(basename "${BASH_SOURCE[0]%/*}")"
 DRY_RUN=false
 SETUP_DIR="${PWD}/${APP_NAME}"
-TARGET_DIR="$HOME"
+TARGET_DIR="${HOME}"
 
 # Parse args
 for arg in "$@"; do
@@ -48,7 +48,12 @@ for file in "${SETUP_DIR}"/*; do
   else
     # Run copy
     echo "-> Copying ${filename} to ${dest}"
-    cp "${src}" "${dest}"
+    mkdir -p "$(dirname "${dest}")"
+		if [[ -d "${src}" ]]; then
+			cp -r "${src}" "${dest}"
+		else
+			cp "${src}" "${dest}"
+		fi
   fi
 done
 
