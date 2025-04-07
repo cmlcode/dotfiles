@@ -9,7 +9,7 @@ set -e
 APP_NAME="$(basename "${BASH_SOURCE[0]%/*}")"
 DRY_RUN=false
 SETUP_DIR="${PWD}/${APP_NAME}"
-TARGET_DIR="$HOME/.config/fake_nvim"
+TARGET_DIR="$HOME/.config/nvim"
 
 # Parse args
 for arg in "$@"; do
