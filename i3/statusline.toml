@@ -20,6 +20,9 @@ format = " $icon $percentage "
 block = "custom"
 command = "~/.config/i3/scripts/wifi.sh" 
 interval = 5
+[[block.click]]
+button = "left"
+cmd = "~/.config/i3/menus/wifi-menu.sh"
 
 [[block]]
 block = "cpu"
