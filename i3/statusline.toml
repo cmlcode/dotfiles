@@ -17,6 +17,11 @@ block = "battery"
 format = " $icon $percentage "
 
 [[block]]
+block = "custom"
+command = "~/.config/i3/scripts/wifi.sh" 
+interval = 5
+
+[[block]]
 block = "cpu"
 info_cpu = 20
 warning_cpu = 50
