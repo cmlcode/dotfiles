@@ -162,7 +162,9 @@ exec --no-startup-id pitcom
 # status bar
 exec_always --no-startup-id killall i3status-rs
 exec_always --no-startup-id i3status-rs ~/.config/i3/statusline.toml
-# BLack background
+# notification system
+exec_always --no-startup-id dunst
+# Black background
 exec --no-startup-id xsetroot -solid "#000000"
 # Turn off power button auto shutdown
 exec --no-startup-id systemd-inhibit --what=handle-power-key sleep infinity
