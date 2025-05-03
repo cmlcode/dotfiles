@@ -154,7 +154,7 @@ bar {
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 # xss-lock locks screen on idle
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l --nofork
 # NetworkManager handles networking(wifi/ether) and VPN
 exec --no-startup-id nm-applet
 # X11 compositor (Picom)

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "I Run">>~/output.txt
 ACTIVE_CONNECTION=$(nmcli -t -f ACTIVE,SSID,SIGNAL dev wifi list --rescan no | grep '^yes')
 
 if [ -z "${ACTIVE_CONNECTION}" ]; then
