@@ -1,0 +1,94 @@
+// -*- mode: jsonc -*-
+{
+	// ================
+	//  BAR FORMATTING
+	// ================
+
+
+	"margin-top" : 5,
+	"margin-left" : 10,
+	"margin-right" : 10,
+	"height": 30,
+
+
+	// ================
+	//  ACTIVE MODULES
+	// ================
+	"modules-left": [
+		"hyprland/window"
+	],
+
+	"modules-center": [
+		"hyprland/workspaces"
+	],
+
+	"modules-right": [
+		"custom/pipewire",
+		"network",
+		"battery",
+		"clock"
+	],
+
+	// ================
+	//  WIDGET OPTIONS
+	// ================
+
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon}  {capacity}%",
+    "format-charging": "   {capacity}%",
+    "format-plugged": "  {capacity}%",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["", "", "", "", ""],
+		"tooltip": false, 
+		"signal": 1
+	},
+	
+	"clock": {
+		"tooltip-format": "<small>{:%Y-%m-%d}</small>",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+
+	"custom/pipewire": {
+			"format": "{}",
+			"return-type": "json",
+			"signal": 8,
+			"interval": 1,
+			"exec": "~/.config/waybar/scripts/pipewire-volume.sh",
+			"on-click": "~/.config/waybar/scripts/cmlBluetoothManager -c \"CML Airpods\"; pkill -RTMIN+8 waybar",
+			"on-click-right": "~/.config/waybar/scripts/cmlBluetoothManager -d 'CML Airpods'; pkill -RTMIN+8 waybar"
+	},
+
+	"hyprland/window": {
+		"format": "{}",
+		"max-length": 35,
+		"rewrite": {
+			".*Firefox.*": "Firefox",
+			"": "Desktop",
+			"^cml@cmllaptop.*": "Alacritty"
+		},
+		"separate-outputs": true
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"active": " "
+		},
+		"sort-by-number": true
+	},
+
+	"network": {
+		"format-wifi": "  {signalStrength}%",
+		"format-ethernet": "{cidr}",
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "⚠",
+		"on-click": "bash ~/.config/hypr/menus/wifi-menu.sh"
+	}
+
+
+}
